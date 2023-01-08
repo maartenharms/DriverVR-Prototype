@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using Commands;
+using Score;
 
 public class DebugInputs : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class DebugInputs : MonoBehaviour
 
     public float turnSpeed = 45;
     private float turnLimit = 90;
+
+    public int showScore;
 
     private UnityAction<float> accelerateEvent;
     private UnityAction toggleHeadlightEvent;
@@ -45,5 +48,7 @@ public class DebugInputs : MonoBehaviour
 
         move.Excecute();
         accelerateEvent.Invoke(acceleration);
+
+        showScore = ScoreSystem.ScoreTotal;
     }
 }
