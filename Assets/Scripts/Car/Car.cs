@@ -23,7 +23,8 @@ public class Car : Actor
 
     public override void Move(Vector3 direction)
     {
-        transform.position += direction * (movementSpeed*acceleration);
+        float timeMovement = movementSpeed*Time.deltaTime;
+        transform.position += direction * (timeMovement*acceleration);
     }
 
     public void Accelerate(float accelerate) 
