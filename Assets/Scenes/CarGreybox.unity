@@ -231,7 +231,7 @@ GameObject:
   - component: {fileID: 17827547}
   - component: {fileID: 17827548}
   m_Layer: 0
-  m_Name: HeadLightL
+  m_Name: HeadLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -329,7 +329,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &39869029
 Transform:
   m_ObjectHideFlags: 0
@@ -3693,6 +3693,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 868993454}
+  onPress:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1585746153}
+        m_TargetAssemblyTypeName: Car, Assembly-CSharp
+        m_MethodName: ToggleHeadlights
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onRelease:
+    m_PersistentCalls:
+      m_Calls: []
   buttonPressedPos: {x: 0, y: 0.01, z: 0}
 --- !u!82 &1547191815
 AudioSource:
