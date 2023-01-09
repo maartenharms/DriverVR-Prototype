@@ -28,4 +28,10 @@ public class AudioManager : ScriptableObject
 	}
 
 	public void PlayPing() => Play("Ping");
+	public void PlayClick() => Play("Click");
+	public void PlaySlowtime() => Play("Slowtime");
+	public void PlayAlert() => Play("Alert");
+	public void PlaySwitch() => Play("Switch");
+	public void PlayRadioSwitch() => Play("RadioSwitch");
+	public void PlayFinish() => Play("Finish");
 }

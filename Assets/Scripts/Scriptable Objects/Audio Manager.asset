@@ -12,9 +12,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e4ca551e86f66c4aa6a062e6ebafdb0, type: 3}
   m_Name: Audio Manager
   m_EditorClassIdentifier: 
-  SFX: {fileID: 0}
+  SFX: {fileID: 24300002, guid: 91906e921461046459e275cc99d535ed, type: 2}
   Sounds:
   - Name: Ping
     Clip: {fileID: 8300000, guid: 02a6b277f70459242b0a5e8b4e5346b6, type: 3}
+    Volume: 1
+    Pitch: 1
+  - Name: Click
+    Clip: {fileID: 8300000, guid: c094eb297dbdfad448eac0db06f04ef5, type: 3}
+    Volume: 1
+    Pitch: 1
+  - Name: Slowtime
+    Clip: {fileID: 8300000, guid: 10e2cfc4ad088e443a72e92572349314, type: 3}
+    Volume: 0.5
+    Pitch: 1
+  - Name: Alert
+    Clip: {fileID: 8300000, guid: b698e7b11813a1b408fade4e7ca32296, type: 3}
+    Volume: 0.7
+    Pitch: 1
+  - Name: Switch
+    Clip: {fileID: 8300000, guid: 5ff6c5c601529ff418c3ade715f0a37a, type: 3}
+    Volume: 1
+    Pitch: 1
+  - Name: RadioSwitch
+    Clip: {fileID: 8300000, guid: 70ae6594420fa234db2efabd221b00fb, type: 3}
+    Volume: 1
+    Pitch: 1
+  - Name: Finish
+    Clip: {fileID: 8300000, guid: f20fbaa46d6abf44eb6862eebae36e55, type: 3}
     Volume: 1
     Pitch: 1
