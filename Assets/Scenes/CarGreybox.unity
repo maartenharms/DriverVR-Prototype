@@ -333,6 +333,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1608749546}
+  - {fileID: 402046668}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -550,6 +551,51 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 385117239}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &402046667
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 402046668}
+  - component: {fileID: 402046669}
+  m_Layer: 0
+  m_Name: SFXManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &402046668
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 402046667}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.16047755, y: 0.13101959, z: -216.1959}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 83941232}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &402046669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 402046667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 317c1fb061e601c41922a74f9c4b3b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AudioMixer: {fileID: 24100000, guid: 91906e921461046459e275cc99d535ed, type: 2}
 --- !u!1 &450855576
 GameObject:
   m_ObjectHideFlags: 0
@@ -2466,10 +2512,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b53346311de0944791a1b1d91a27d44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AudioManager: {fileID: 11400000, guid: 3343dd9e100c93b4388f068885c178cb, type: 2}
   SkyboxDay: {fileID: 2100000, guid: 10b35a3a5a90dac4e846bf7e7779e6db, type: 2}
   SkyboxNight: {fileID: 2100000, guid: b27f5c79f3566e3419e952191bb27489, type: 2}
   DirectionalLight: {fileID: 1847880224}
-  IsDay: 1
 --- !u!1 &1649013295
 GameObject:
   m_ObjectHideFlags: 0

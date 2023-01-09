@@ -4,14 +4,20 @@ using UnityEngine;
 
 public class SkyboxManager : MonoBehaviour
 {
+	public AudioManager AudioManager;
 	public Material SkyboxDay;
 	public Material SkyboxNight;
 	public GameObject DirectionalLight;
 
-	public bool IsDay = true;
-	public bool ToChange = false;
+	bool IsDay = true;
+	bool ToChange = false;
 
-	void Start() => SetDayTime();
+	public void SwitchTimeOfDay()
+	{
+		AudioManager.PlaySwitch();
+		IsDay = !IsDay;
+		ToChange = true;
+	}
 
 	public void SetDayTime()
 	{
@@ -27,11 +33,8 @@ public class SkyboxManager : MonoBehaviour
 
 	void Update()
 	{
-		if(Input.GetKeyDown(KeyCode.Space))
-		{
-			IsDay = !IsDay;
-			ToChange = true;
-		}
+		if (Input.GetKeyDown(KeyCode.Space))
+			SwitchTimeOfDay();
 
 		if (IsDay && ToChange)
 		{
