@@ -7,6 +7,10 @@ TagManager:
   - SamplesInfoPanel
   - VRHandRight
   - VRHandLeft
+  - Actor
+  - Obstacle
+  - LevelGoal
+  - Spotter
   layers:
   - Default
   - TransparentFX

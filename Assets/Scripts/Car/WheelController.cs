@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Commands;
 
 public class WheelController : MonoBehaviour
 {
@@ -20,6 +21,10 @@ public class WheelController : MonoBehaviour
     private Transform originalParent;
     public Transform directionalObject;
 
+    private int turnLimit = 90;
+
+    public GameObject car;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +43,7 @@ public class WheelController : MonoBehaviour
         ReleaseHandsFromWheel();
         ConvertHandToWheelRoation();
         currentWheelRotation = -transform.rotation.eulerAngles.z;
+        ConvertRotationToDirection();
     }
 
     private void ReleaseHandsFromWheel()
@@ -92,6 +98,20 @@ public class WheelController : MonoBehaviour
 
         // Set parent to directional object
         transform.parent = directionalObject;
+    }
+
+    private void ConvertRotationToDirection()
+    {
+        float clampwheelrotation = Mathf.Clamp(currentWheelRotation,-turnLimit, turnLimit);
+        Vector3 direction = Vector3.zero;
+        direction.x = clampwheelrotation / turnLimit;
+
+        MoveActorCommand move = new MoveActorCommand(
+            car.GetInstanceID(),
+            direction
+            );
+
+        move.Excecute();
     }
 
     private void OnTriggerStay(Collider other)
