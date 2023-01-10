@@ -20,7 +20,6 @@ public class ObstacleManager : MonoBehaviour
         foreach (GameObject obj in _obstacles) 
         {
             int instanceID = obj.GetInstanceID();
-            Debug.Log($"{obj.name}, {instanceID}");
 
             // Skip to next loop if list already has the instance ID
             if (obstacles.ContainsKey(instanceID))
@@ -53,8 +52,6 @@ public class ObstacleManager : MonoBehaviour
         LevelData leveldata = CreateLevelData(levelname);
 
         CalculateCurrency(levelname, leveldata.obstacleCompletion);
-
-        Debug.Log("pray");
     }
 
     private LevelData CreateLevelData(string levelname) 

@@ -9,7 +9,7 @@ public class SpottingHeadtrack : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        spotObject = Instantiate(Resources.Load<GameObject>("Prefabs/Spotter"));
+        spotObject = Instantiate(Resources.Load<GameObject>("Prefabs/DebugSpotter"));
         spotObject.transform.position = this.transform.position;
         spotObject.SetActive(false);
     }

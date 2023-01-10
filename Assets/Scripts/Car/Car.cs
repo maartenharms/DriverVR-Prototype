@@ -30,7 +30,6 @@ public class Car : Actor
     public void Accelerate(float accelerate) 
     {
         acceleration = Mathf.Clamp(accelerate, minAcceleration, maxAcceleration);
-        Debug.Log(acceleration);
     }
 
     public void ToggleHeadlights() 
