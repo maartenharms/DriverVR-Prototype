@@ -8,12 +8,18 @@ public class Obstacle : MonoBehaviour
 {
     [SerializeField] public int pointValue = 0;
 
-    public bool isCompleted;
+    public bool isCompleted = false;
+    private bool hasFailed = false;
     
-    private bool isActivated = false;
+    public bool isActivated = false;
 
     public UnityAction<int> onCompleteTrigger;
     public UnityAction onFailTrigger;
+
+    public virtual void Awake() 
+    {
+        this.tag = "Obstacle";
+    }
 
     public virtual void ToggleTrigger()
     {
@@ -38,7 +44,10 @@ public class Obstacle : MonoBehaviour
 
     public virtual void FailTrigger()
     {
-        if(!isCompleted)
+        if (!isCompleted && !hasFailed)
+        {
             onFailTrigger.Invoke();
+            hasFailed = true;
+        }
     }
 }

@@ -5,12 +5,13 @@ using UnityEngine.Events;
 
 public class ObstacleEvent : Obstacle
 {
-    public UnityEvent obstacleEvent;
+    public Actor actor;
 
     public override void ToggleTrigger()
     {
         base.ToggleTrigger();
 
-        obstacleEvent.Invoke();
+        actor.EventTrigger();
+        actor.actorCompleteEvent += CompleteTrigger;
     }
 }

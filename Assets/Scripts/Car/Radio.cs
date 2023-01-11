@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
-public class Radio : MonoBehaviour
+public class Radio : Actor
 {
     private AudioSource audioSource;
+    public UnityAction onEventTrigger;
 
     // Start is called before the first frame update
     void Start()
@@ -12,19 +14,18 @@ public class Radio : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
-    public void ToggleRadio() 
+    public void ToggleRadio()
     {
+        actorCompleteEvent?.Invoke();
+
         if (audioSource.isPlaying)
             audioSource.Stop();
         else
             audioSource.Play();
     }
 
-    public void SetRadio(bool value)
+    public override void EventTrigger() 
     {
-        if(value)
-            audioSource.Play();
-        else
-            audioSource.Stop();
+        audioSource.Play();
     }
 }

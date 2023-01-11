@@ -9,6 +9,12 @@ public class SpottableObject : Obstacle
 
     private bool isSpotted = false;
 
+    public override void Awake()
+    {
+        base.Awake();
+        isActivated = true;
+    }
+
     private void Update()
     {
         if (isCompleted)

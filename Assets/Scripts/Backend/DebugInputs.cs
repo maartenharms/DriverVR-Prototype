@@ -15,12 +15,12 @@ public class DebugInputs : MonoBehaviour
     public int showScore;
 
     private UnityAction<float> accelerateEvent;
-    private UnityAction toggleHeadlightEvent;
+    public UnityEvent toggleHeadlightEvent;
+    public UnityEvent toggleRadioEvent;
 
     private void Awake()
     {
         accelerateEvent += car.GetComponent<Car>().Accelerate;
-        toggleHeadlightEvent += car.GetComponent<Car>().ToggleHeadlights;
     }
 
     // Update is called once per frame
@@ -39,7 +39,10 @@ public class DebugInputs : MonoBehaviour
             acceleration = 0.5f;
 
         if (Input.GetKeyDown(KeyCode.F))
-            toggleHeadlightEvent.Invoke();
+            toggleHeadlightEvent?.Invoke();
+
+        if (Input.GetKeyDown(KeyCode.R))
+            toggleRadioEvent?.Invoke();
 
         MoveActorCommand move = new MoveActorCommand(
             car.GetInstanceID(),

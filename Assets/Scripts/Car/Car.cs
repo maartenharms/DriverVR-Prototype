@@ -31,14 +31,4 @@ public class Car : Actor
     {
         acceleration = Mathf.Clamp(accelerate, minAcceleration, maxAcceleration);
     }
-
-    public void ToggleHeadlights() 
-    {
-        Debug.Log($"toggle headlights");
-
-        if (!headlights)
-            return;
-
-        headlights.SetActive(!headlights.activeSelf);
-    }
 }
