@@ -19,4 +19,12 @@ public class Radio : MonoBehaviour
         else
             audioSource.Play();
     }
+
+    public void SetRadio(bool value)
+    {
+        if(value)
+            audioSource.Play();
+        else
+            audioSource.Stop();
+    }
 }

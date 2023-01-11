@@ -6,7 +6,6 @@ using UnityEngine.Events;
 public class ObjectTrigger : MonoBehaviour
 {
     public UnityEvent triggerEnter;
-    public UnityEvent triggerExit;
 
     public string checkForTag = "";
 
@@ -16,13 +15,5 @@ public class ObjectTrigger : MonoBehaviour
             return;
 
         triggerEnter.Invoke();
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (!other.CompareTag(checkForTag))
-            return;
-
-        triggerExit.Invoke();
     }
 }

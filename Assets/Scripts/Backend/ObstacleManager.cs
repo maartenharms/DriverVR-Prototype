@@ -8,6 +8,8 @@ using Currency;
 public class ObstacleManager : MonoBehaviour
 {
     private Dictionary<int, Obstacle> obstacles = new Dictionary<int, Obstacle>();
+    private int failmarks;
+    [SerializeField] private int maxFailmarks;
 
     // Start is called before the first frame update
     private void Awake()
@@ -15,9 +17,9 @@ public class ObstacleManager : MonoBehaviour
         GameObject endGoal = GameObject.FindGameObjectWithTag("LevelGoal");
         endGoal.GetComponent<LevelGoal>().onReachingGoal += OnLevelCompletion;
 
-        GameObject[] _obstacles = GameObject.FindGameObjectsWithTag("Obstacle");
+        GameObject[] allObstacles = GameObject.FindGameObjectsWithTag("Obstacle");
 
-        foreach (GameObject obj in _obstacles) 
+        foreach (GameObject obj in allObstacles) 
         {
             int instanceID = obj.GetInstanceID();
 
@@ -26,8 +28,10 @@ public class ObstacleManager : MonoBehaviour
                 continue;
 
             // If it didn't, add the actor and instance ID
-            obstacles.Add(instanceID, obj.GetComponent<Obstacle>());
-            obj.GetComponent<Obstacle>().onCompleteTrigger += ScoreSystem.AddScore;
+            Obstacle _obstacle = obj.GetComponent<Obstacle>();
+            obstacles.Add(instanceID, _obstacle);
+            _obstacle.onCompleteTrigger += ScoreSystem.AddScore;
+            _obstacle.onFailTrigger += OnFailingObstacle;
         }
 
         // Get scene name as level name
@@ -40,6 +44,19 @@ public class ObstacleManager : MonoBehaviour
             LevelData leveldata = CreateLevelData(levelname);
             DataManager.levelData.Add(levelname, leveldata);
         }
+    }
+
+    public void OnFailingObstacle()
+    {
+        failmarks++;
+        Debug.Log($"You failed {failmarks} times you dingus");
+        if(failmarks >= maxFailmarks)
+            LevelFail();
+    }
+
+    private void LevelFail()
+    {
+        Debug.Log("level failed");
     }
 
     public void OnLevelCompletion() 
