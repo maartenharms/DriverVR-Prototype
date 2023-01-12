@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using GlobalEvents;
 
 public class Radio : Actor
 {
@@ -16,6 +17,7 @@ public class Radio : Actor
 
     public void ToggleRadio()
     {
+        GlobalEventManager.StartButtonEvent(GlobalEventManager.BUTTON.RADIO);
         actorCompleteEvent?.Invoke();
 
         if (audioSource.isPlaying)

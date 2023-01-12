@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using GlobalEvents;
 
 public class Car : Actor
 {
@@ -10,9 +11,6 @@ public class Car : Actor
     private float acceleration = 1;
     [SerializeField] private float maxAcceleration = 1;
     [SerializeField] private float minAcceleration = 0.5f;
-
-    [SerializeField]
-    private GameObject headlights;
 
     // Update is called once per frame
     void Update()
@@ -29,6 +27,9 @@ public class Car : Actor
 
     public void Accelerate(float accelerate) 
     {
+        if(accelerate < 1)
+            GlobalEventManager.StartButtonEvent(GlobalEventManager.BUTTON.BREAK);
+            
         acceleration = Mathf.Clamp(accelerate, minAcceleration, maxAcceleration);
     }
 }

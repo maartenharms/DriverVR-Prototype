@@ -50,7 +50,7 @@ public class DebugInputs : MonoBehaviour
             );
 
         move.Excecute();
-        accelerateEvent.Invoke(acceleration);
+        accelerateEvent?.Invoke(acceleration);
 
         showScore = ScoreSystem.ScoreTotal;
     }

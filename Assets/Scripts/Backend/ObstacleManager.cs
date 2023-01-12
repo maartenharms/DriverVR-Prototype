@@ -14,9 +14,6 @@ public class ObstacleManager : MonoBehaviour
     // Start is called before the first frame update
     private void Awake()
     {
-        GameObject endGoal = GameObject.FindGameObjectWithTag("LevelGoal");
-        endGoal.GetComponent<LevelGoal>().onReachingGoal += OnLevelCompletion;
-
         GameObject[] allObstacles = GameObject.FindGameObjectsWithTag("Obstacle");
 
         foreach (GameObject obj in allObstacles) 

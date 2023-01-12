@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using GlobalEvents;
 
 public class Headlight : Actor
 {
@@ -17,6 +18,7 @@ public class Headlight : Actor
 
     public void ToggleHeadlights()
     {
+        GlobalEventManager.StartButtonEvent(GlobalEventManager.BUTTON.HEADLIGHT);
         actorCompleteEvent?.Invoke();
 
         bool isActive = lamps[0].activeSelf;
