@@ -12,8 +12,9 @@ public class TimedTutorialEvent : TutorialEvent
 
     public override void InitiateEvent()
     {
-        ToggleTutorialText(true);
         timerStarted = true;
+
+        base.InitiateEvent();
     }
 
     void Update()
@@ -30,9 +31,9 @@ public class TimedTutorialEvent : TutorialEvent
         }
     }
 
-    public override void OnCompleteEvent(GlobalEventManager.BUTTON button = GlobalEventManager.BUTTON.ANY)
+    public override void OnCompleteEvent()
     {
-        ToggleTutorialText(false);
+        ToggleTutorialObjects(false);
         onCompleteEvent?.Invoke();
         onCompleteEvent = null;
     }

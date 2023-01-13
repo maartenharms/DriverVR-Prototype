@@ -6,42 +6,42 @@ using GlobalEvents;
 
 public class TutorialEvent : MonoBehaviour
 {
-    [SerializeField] private GlobalEventManager.BUTTON listenToButton;
-
-    private GameObject[] tutorialText;
+    private GameObject[] tutorialObjects;
     public UnityAction onCompleteEvent;
 
     public void Awake()
     {
-        tutorialText = new GameObject[transform.childCount];
+        // Find all childed gameobjects
+        // and save the refferences in an array
+        tutorialObjects = new GameObject[transform.childCount];
         for(int i = 0; i < transform.childCount; i++)
         {
-            tutorialText[i] = transform.GetChild(i).gameObject;
+            tutorialObjects[i] = transform.GetChild(i).gameObject;
         }
 
-        ToggleTutorialText(false);
+        // Disable child objects
+        ToggleTutorialObjects(false);
     }
 
+    // Start tutorial event
     public virtual void InitiateEvent()
     {
-        GlobalEventManager.onButtonEvent += OnCompleteEvent;
-
-        ToggleTutorialText(true);
+        // Enable child objects
+        ToggleTutorialObjects(true);
     }
 
-    public virtual void OnCompleteEvent(GlobalEventManager.BUTTON button = GlobalEventManager.BUTTON.ANY)
+    // Finish tutorial event
+    public virtual void OnCompleteEvent()
     {
-        if(button == listenToButton)
-        {
-            ToggleTutorialText(false);
-            onCompleteEvent?.Invoke();
-            onCompleteEvent = null;
-        }
+        ToggleTutorialObjects(false);
+        onCompleteEvent?.Invoke();
+        onCompleteEvent = null;
     }
 
-    public void ToggleTutorialText(bool isActive)
+    // Enable or disable all childed gameobjects
+    public void ToggleTutorialObjects(bool isActive)
     {
-        foreach(GameObject obj in tutorialText)
+        foreach(GameObject obj in tutorialObjects)
         {
             obj.SetActive(isActive);
         }
