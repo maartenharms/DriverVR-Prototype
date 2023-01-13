@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class LevelGoal : MonoBehaviour
 {
-    public UnityAction onReachingGoal;
+    public UnityEvent onReachingGoal;
 
     private void OnTriggerEnter(Collider other)
     {

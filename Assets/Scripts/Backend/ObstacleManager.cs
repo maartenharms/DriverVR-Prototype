@@ -8,27 +8,27 @@ using Currency;
 public class ObstacleManager : MonoBehaviour
 {
     private Dictionary<int, Obstacle> obstacles = new Dictionary<int, Obstacle>();
+    private int failmarks;
+    [SerializeField] private int maxFailmarks;
 
     // Start is called before the first frame update
     private void Awake()
     {
-        GameObject endGoal = GameObject.FindGameObjectWithTag("LevelGoal");
-        endGoal.GetComponent<LevelGoal>().onReachingGoal += OnLevelCompletion;
+        GameObject[] allObstacles = GameObject.FindGameObjectsWithTag("Obstacle");
 
-        GameObject[] _obstacles = GameObject.FindGameObjectsWithTag("Obstacle");
-
-        foreach (GameObject obj in _obstacles) 
+        foreach (GameObject obj in allObstacles) 
         {
             int instanceID = obj.GetInstanceID();
-            Debug.Log($"{obj.name}, {instanceID}");
 
             // Skip to next loop if list already has the instance ID
             if (obstacles.ContainsKey(instanceID))
                 continue;
 
             // If it didn't, add the actor and instance ID
-            obstacles.Add(instanceID, obj.GetComponent<Obstacle>());
-            obj.GetComponent<Obstacle>().onCompleteTrigger += ScoreSystem.AddScore;
+            Obstacle _obstacle = obj.GetComponent<Obstacle>();
+            obstacles.Add(instanceID, _obstacle);
+            _obstacle.onCompleteTrigger += ScoreSystem.AddScore;
+            _obstacle.onFailTrigger += OnFailingObstacle;
         }
 
         // Get scene name as level name
@@ -43,6 +43,19 @@ public class ObstacleManager : MonoBehaviour
         }
     }
 
+    public void OnFailingObstacle()
+    {
+        failmarks++;
+        Debug.Log($"You failed {failmarks} times you dingus");
+        if(failmarks >= maxFailmarks)
+            LevelFail();
+    }
+
+    private void LevelFail()
+    {
+        Debug.Log("level failed");
+    }
+
     public void OnLevelCompletion() 
     {
         // Get scene name as level name
@@ -53,8 +66,6 @@ public class ObstacleManager : MonoBehaviour
         LevelData leveldata = CreateLevelData(levelname);
 
         CalculateCurrency(levelname, leveldata.obstacleCompletion);
-
-        Debug.Log("pray");
     }
 
     private LevelData CreateLevelData(string levelname) 

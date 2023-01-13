@@ -6,8 +6,8 @@ using UnityEngine.Events;
 public class ButtonVR : MonoBehaviour
 {
     [SerializeField] private GameObject button;
-    [SerializeField] private UnityAction onPress;
-    [SerializeField] private UnityAction onRelease;
+    [SerializeField] public UnityEvent onPress;
+    [SerializeField] public UnityEvent onRelease;
     private AudioSource audioSource;
     private GameObject presser;
     private bool isPressed;
@@ -24,11 +24,8 @@ public class ButtonVR : MonoBehaviour
         buttonReleasePos = button.transform.localPosition;
     }
 
-    void OnTriggerEnter(Collider other)
+    private void ButtonPress(Collider other)
     {
-        if(other.tag != "VRHandLeft" || other.tag != "VRHandRight")
-            return;
-        
         if(!isPressed)
         {
             presser = other.gameObject;
@@ -36,6 +33,32 @@ public class ButtonVR : MonoBehaviour
             audioSource.Play();
             onPress.Invoke();
             isPressed = true;
+        }
+    }
+
+    void OnTriggerStay(Collider other)
+    {
+        if(other.CompareTag("VRHandLeft"))
+        {
+            if(OVRInput.GetDown(OVRInput.Button.PrimaryHandTrigger, OVRInput.Controller.LTouch))
+            ButtonPress(other);
+        }
+
+        if(other.CompareTag("VRHandRight"))
+        {
+            if(OVRInput.GetDown(OVRInput.Button.PrimaryHandTrigger, OVRInput.Controller.RTouch))
+            ButtonPress(other);
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if(other.gameObject == presser)
+        {
+            presser = null;
+            button.transform.localPosition = buttonReleasePos;
+            onRelease.Invoke();
+            isPressed = false;
         }
     }
 }

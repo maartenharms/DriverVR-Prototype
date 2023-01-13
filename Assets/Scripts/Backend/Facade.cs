@@ -28,7 +28,6 @@ namespace Control
             foreach (GameObject a in _actors)
             {
                 int instanceID = a.GetInstanceID();
-                Debug.Log($"{a.name}, {instanceID}");
 
                 // Skip to next loop if list already has the instance ID
                 if (actors.ContainsKey(instanceID))
