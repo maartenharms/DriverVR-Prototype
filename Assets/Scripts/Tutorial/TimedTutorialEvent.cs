@@ -21,7 +21,6 @@ public class TimedTutorialEvent : TutorialEvent
     {
         if(timerStarted)
         {
-            Debug.Log(timer);
             timer += 1*Time.deltaTime;
             if(timer > tutorialTimer)
             {

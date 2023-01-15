@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Score;
 using DataManagement;
 using Currency;
@@ -66,6 +67,8 @@ public class ObstacleManager : MonoBehaviour
         LevelData leveldata = CreateLevelData(levelname);
 
         CalculateCurrency(levelname, leveldata.obstacleCompletion);
+        SceneManager.LoadScene(0);
+        Debug.Log("wut?");
     }
 
     private LevelData CreateLevelData(string levelname) 

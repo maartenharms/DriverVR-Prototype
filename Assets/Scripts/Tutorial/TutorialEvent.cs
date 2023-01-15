@@ -36,6 +36,7 @@ public class TutorialEvent : MonoBehaviour
         ToggleTutorialObjects(false);
         onCompleteEvent?.Invoke();
         onCompleteEvent = null;
+        Debug.Log("event cleared");
     }
 
     // Enable or disable all childed gameobjects

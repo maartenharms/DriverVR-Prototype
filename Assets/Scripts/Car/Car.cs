@@ -32,4 +32,9 @@ public class Car : Actor
             
         acceleration = Mathf.Clamp(accelerate, minAcceleration, maxAcceleration);
     }
+
+    public void SetBaseSpeed(float speed) 
+    {
+        movementSpeed = speed;
+    }
 }
