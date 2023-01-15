@@ -1417,10 +1417,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d07b1927ccd4cd4c8d46fc0ccd4ff72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 10
+  carSpeed: 0
   maxAcceleration: 1
   minAcceleration: 0.5
-  headlights: {fileID: 7728609038712238211}
 --- !u!1 &7728609040000766720
 GameObject:
   m_ObjectHideFlags: 0
