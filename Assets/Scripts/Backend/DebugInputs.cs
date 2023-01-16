@@ -17,6 +17,7 @@ public class DebugInputs : MonoBehaviour
     private UnityAction<float> accelerateEvent;
     public UnityEvent toggleHeadlightEvent;
     public UnityEvent toggleRadioEvent;
+    public UnityEvent playAnimation;
 
     private void Awake()
     {
@@ -43,6 +44,9 @@ public class DebugInputs : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.R))
             toggleRadioEvent?.Invoke();
+
+        if (Input.GetKeyDown(KeyCode.P))
+            playAnimation.Invoke();
 
         MoveActorCommand move = new MoveActorCommand(
             car.GetInstanceID(),

@@ -11,7 +11,6 @@ public class AnimController : MonoBehaviour
     void Awake()
     {
         animator = GetComponent<Animator>();
-        animator.speed = 0;
     }
 
     /* Debug Update
@@ -25,6 +24,31 @@ public class AnimController : MonoBehaviour
             LerpAnimationSpeed(0.3f);
     }
     */
+
+    public void SetStateValue<T1, T2>(T1 key, T2 arg)
+    {
+        if (typeof(T2) == typeof(bool))
+            SetBoolValue(key as string, System.Convert.ToBoolean(arg));
+        else if (typeof(T2) == typeof(int))
+            SetIntValue(key as string, System.Convert.ToInt32(arg));
+        else if (typeof(T2) == typeof(float))
+            SetFloatValue(key as string, System.Convert.ToSingle(arg));
+    }
+
+    public void SetBoolValue(string key, bool arg) 
+    {
+        animator.SetBool(key, arg);
+    }
+
+    public void SetIntValue(string key, int arg) 
+    {
+        animator.SetInteger(key, arg);
+    }
+
+    public void SetFloatValue(string key, float arg)
+    {
+        animator.SetFloat(key, arg);
+    }
 
     public void LerpAnimationSpeed(float targetSpeed)
     {
