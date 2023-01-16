@@ -5,7 +5,7 @@ using GlobalEvents;
 
 public class Car : Actor
 {
-    private Animator animator;
+    public AnimController animator;
 
     [SerializeField]
     private float carSpeed = 0;
@@ -17,7 +17,7 @@ public class Car : Actor
     public override void Awake()
     {
         base.Awake();
-        animator = GetComponent<Animator>();
+        animator = GetComponent<AnimController>();
     }
 
     // Update is called once per frame
@@ -48,23 +48,8 @@ public class Car : Actor
     {
         carSpeed = newSpeed;
 
-        if (carSpeed == newSpeed)
-            return;
-
-        StartCoroutine("ChangeSpeed", newSpeed);               
+        animator.LerpAnimationSpeed(newSpeed);
     }
 
-    IEnumerator ChangeSpeed(float newSpeed) 
-    {
-        float distance = newSpeed - carSpeed;
-        float startTime = Time.time;
-        float startSpeed = carSpeed;
-
-        while (carSpeed != newSpeed) 
-        {
-            float progress = ((Time.time - startTime) * acceleration) / distance;
-            carSpeed = Mathf.Lerp(startSpeed, newSpeed, progress);
-            yield return null;
-        }
-    }
+    
 }
