@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Oculus/SampleFramework/Usage/DistanceGrab.unity
     guid: 24f58b3f0ca02d44eaec7f50bca538f2
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 2190e33d6f2c4c444a97158da64729e4
+  - enabled: 1
     path: Assets/Scenes/CarGreybox.unity
     guid: 6a812db6c7ba5ef4090f4ed8fe397a9f
   m_configObjects:
