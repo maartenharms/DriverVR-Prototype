@@ -33,7 +33,7 @@ public class ObstacleManager : MonoBehaviour
         }
 
         // Get scene name as level name
-        string levelname = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
+        string levelname = SceneManager.GetActiveScene().name;
 
         // Check if leveldata is present
         // If not, create and save leveldata
@@ -60,7 +60,7 @@ public class ObstacleManager : MonoBehaviour
     public void OnLevelCompletion() 
     {
         // Get scene name as level name
-        string levelname = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
+        string levelname = SceneManager.GetActiveScene().name;
 
         // Create LevelData variable from gathered data
         // Save it in a global script

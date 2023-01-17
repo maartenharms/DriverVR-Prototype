@@ -694,7 +694,6 @@ GameObject:
   - component: {fileID: 7728609039291046768}
   - component: {fileID: 7728609039291046781}
   - component: {fileID: 7728609039291046782}
-  - component: {fileID: 7728609039291046783}
   m_Layer: 0
   m_Name: Dashboard
   m_TagString: Untagged
@@ -767,19 +766,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &7728609039291046783
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7728609039291046769}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7728609039407923980
 GameObject:
   m_ObjectHideFlags: 0
@@ -824,7 +810,6 @@ GameObject:
   - component: {fileID: 7728609039511860524}
   - component: {fileID: 7728609039511860521}
   - component: {fileID: 7728609039511860522}
-  - component: {fileID: 7728609039511860523}
   m_Layer: 0
   m_Name: Middle
   m_TagString: Untagged
@@ -897,19 +882,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &7728609039511860523
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7728609039511860525}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7728609039633252498
 GameObject:
   m_ObjectHideFlags: 0
@@ -1183,7 +1155,6 @@ GameObject:
   - component: {fileID: 7728609039886095134}
   - component: {fileID: 7728609039886095131}
   - component: {fileID: 7728609039886095132}
-  - component: {fileID: 7728609039886095133}
   m_Layer: 0
   m_Name: Front
   m_TagString: Untagged
@@ -1256,19 +1227,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &7728609039886095133
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7728609039886095135}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7728609039930104411
 GameObject:
   m_ObjectHideFlags: 0
@@ -1280,7 +1238,6 @@ GameObject:
   - component: {fileID: 7728609039930104410}
   - component: {fileID: 7728609039930104359}
   - component: {fileID: 7728609039930104408}
-  - component: {fileID: 7728609039930104409}
   m_Layer: 0
   m_Name: Bottom
   m_TagString: Untagged
@@ -1353,19 +1310,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &7728609039930104409
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7728609039930104411}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7728609039993813519
 GameObject:
   m_ObjectHideFlags: 0
@@ -1417,10 +1361,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d07b1927ccd4cd4c8d46fc0ccd4ff72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 10
+  animator: {fileID: 0}
+  carSpeed: 0
   maxAcceleration: 1
   minAcceleration: 0.5
-  headlights: {fileID: 7728609038712238211}
 --- !u!1 &7728609040000766720
 GameObject:
   m_ObjectHideFlags: 0
@@ -1719,7 +1663,6 @@ GameObject:
   - component: {fileID: 7728609040592089257}
   - component: {fileID: 7728609040592089268}
   - component: {fileID: 7728609040592089269}
-  - component: {fileID: 7728609040592089270}
   - component: {fileID: 7728609040592089271}
   - component: {fileID: 7728609040592089256}
   m_Layer: 0
@@ -1794,19 +1737,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &7728609040592089270
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7728609040592089258}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!82 &7728609040592089271
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2272,7 +2202,7 @@ PrefabInstance:
     - target: {fileID: 4926590347846174719, guid: 522b89d0f09cc834db5f015f40e578f3,
         type: 3}
       propertyPath: MaximumHeight
-      value: 2.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4926590347846174719, guid: 522b89d0f09cc834db5f015f40e578f3,
         type: 3}
@@ -2307,8 +2237,8 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7728609040124416096}
   m_PrefabAsset: {fileID: 0}
---- !u!135 &7728609040124416119
-SphereCollider:
+--- !u!136 &1475149622277985948
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2317,9 +2247,10 @@ SphereCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.12799752
-  m_Center: {x: 0.026385667, y: 0.028145269, z: -0.018505756}
+  m_Radius: 0.029201413
+  m_Height: 0.1423706
+  m_Direction: 0
+  m_Center: {x: 0.03, y: 0.015677022, z: 0.008790834}
 --- !u!1 &3395515282612660101 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4926590347321325541, guid: 522b89d0f09cc834db5f015f40e578f3,
@@ -2344,8 +2275,8 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7728609040124416096}
   m_PrefabAsset: {fileID: 0}
---- !u!135 &7728609040124416115
-SphereCollider:
+--- !u!136 &7754329891617512954
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2354,9 +2285,10 @@ SphereCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.12799752
-  m_Center: {x: 0.026385667, y: 0.028145269, z: -0.018505756}
+  m_Radius: 0.029201413
+  m_Height: 0.1423706
+  m_Direction: 0
+  m_Center: {x: -0.034746934, y: 0.015677022, z: 0.008790834}
 --- !u!4 &3395515283144726402 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4926590347846174690, guid: 522b89d0f09cc834db5f015f40e578f3,
@@ -2494,7 +2426,7 @@ PrefabInstance:
         type: 3}
       propertyPath: onPress.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 7728609039993813518}
+      objectReference: {fileID: 7728609038712238209}
     - target: {fileID: 1564941793867640566, guid: a7b9824d0bc4a3d4db07d62a11615789,
         type: 3}
       propertyPath: onPress.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
@@ -2508,7 +2440,7 @@ PrefabInstance:
     - target: {fileID: 1564941793867640566, guid: a7b9824d0bc4a3d4db07d62a11615789,
         type: 3}
       propertyPath: onPress.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Car, Assembly-CSharp
+      value: Headlight, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1564941793867640566, guid: a7b9824d0bc4a3d4db07d62a11615789,
         type: 3}

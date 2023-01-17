@@ -22,9 +22,9 @@ public class TutorialManager : MonoBehaviour
 
     private void NextTutorialEvent()
     {
-        tutorialEvents[tutorialNum].InitiateEvent();
-        tutorialEvents[tutorialNum].onCompleteEvent += OnCompleteEvent;
         tutorialNum++;
+        tutorialEvents[tutorialNum-1].onCompleteEvent += OnCompleteEvent;
+        tutorialEvents[tutorialNum-1].InitiateEvent();
     }
 
     public void OnCompleteEvent()
