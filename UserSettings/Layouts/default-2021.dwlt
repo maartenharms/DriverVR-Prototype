@@ -74,7 +74,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 200}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 131
+  controlID: 115
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -138,7 +138,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: ConsoleWindow
+  m_Name: ProjectBrowser
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -147,16 +147,16 @@ MonoBehaviour:
     y: 606
     width: 1557
     height: 341
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_ActualView: {fileID: 22}
+  m_MinSize: {x: 231, y: 271}
+  m_MaxSize: {x: 10001, y: 10021}
+  m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
   - {fileID: 22}
   - {fileID: 14}
   - {fileID: 13}
-  m_Selected: 1
-  m_LastSelected: 0
+  m_Selected: 0
+  m_LastSelected: 1
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -252,7 +252,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 1
-  controlID: 58
+  controlID: 56
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -278,7 +278,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 8096}
   vertical: 0
-  controlID: 59
+  controlID: 57
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -598,22 +598,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes/ShipScenes/Levels
+    - Assets/Prefabs/Actors
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scenes/ShipScenes/Levels
+  - Assets/Prefabs/Actors
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Yor-el\Documents\GitHub\DriverVR-Prototype
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 40}
-    m_SelectedIDs: b87a0000
-    m_LastClickedID: 31416
-    m_ExpandedIDs: 000000006e7a0000707a0000727a0000747a0000767a0000787a00007a7a00007c7a00007e7a0000807a0000827a0000847a0000887a000000ca9a3b
+    m_SelectedIDs: 548b0000
+    m_LastClickedID: 35668
+    m_ExpandedIDs: 0000000050850000528500005485000056850000588500005a8500005c8500005e8500006085000062850000648500006685000068850000e485000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -641,7 +641,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000006e7a0000707a0000727a0000747a0000767a0000787a00007a7a00007c7a00007e7a0000807a0000827a0000847a0000867a0000887a0000
+    m_ExpandedIDs: 0000000050850000528500005485000056850000588500005a8500005c8500005e8500006085000062850000648500006685000068850000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -666,9 +666,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 34860000
-    m_LastClickedInstanceID: 34356
-    m_HadKeyboardFocusLastEvent: 0
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -771,9 +771,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 00870000
-      m_LastClickedID: 34560
-      m_ExpandedIDs: 50b9ffff6ab9ffff68beffff20fbfffff2700000348600004a8600000087000006870000
+      m_SelectedIDs: 10870000
+      m_LastClickedID: 34576
+      m_ExpandedIDs: 54eaffffc0eeffff1486000022860000d4860000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1056,9 +1056,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 11.69, y: 0.53999996, z: 64.1}
+    m_Target: {x: 17.640373, y: -10.253023, z: 60.11563}
     speed: 2
-    m_Value: {x: 11.69, y: 0.53999996, z: 64.1}
+    m_Value: {x: 17.640373, y: -10.253023, z: 60.11563}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1107,11 +1107,11 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: -0.09573466, y: -0.14373273, z: 0.014041169, w: -0.9849756}
     speed: 2
-    m_Value: {x: -0.09574612, y: -0.14224099, z: 0.013896173, w: -0.9850924}
+    m_Value: {x: -0.09572518, y: -0.1437185, z: 0.014039778, w: -0.984878}
   m_Size:
-    m_Target: 4.5601
+    m_Target: 33.505703
     speed: 2
-    m_Value: 4.5601
+    m_Value: 33.505703
   m_Ortho:
     m_Target: 0
     speed: 2
