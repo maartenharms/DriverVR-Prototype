@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -383,13 +383,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 160138135}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.69, y: 0.54, z: 4.72}
+  m_LocalPosition: {x: 11.69, y: 0.54, z: 64.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 641702925}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &160138138
 MonoBehaviour:
@@ -544,7 +544,7 @@ Transform:
   - {fileID: 1750165115}
   - {fileID: 87017263}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &453289876
 PrefabInstance:
@@ -1902,7 +1902,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 36.919, z: 0}
 --- !u!114 &1061836848
 MonoBehaviour:
@@ -2075,7 +2075,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1575041896}
     m_Modifications:
     - target: {fileID: 3395515282719240084, guid: 39813a620e53de840a8bebc0aa40adff,
         type: 3}
@@ -2085,7 +2085,7 @@ PrefabInstance:
     - target: {fileID: 7728609039993813517, guid: 39813a620e53de840a8bebc0aa40adff,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7728609039993813517, guid: 39813a620e53de840a8bebc0aa40adff,
         type: 3}
@@ -2139,6 +2139,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7728609039993813518, guid: 39813a620e53de840a8bebc0aa40adff,
         type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1575041894}
+    - target: {fileID: 7728609039993813518, guid: 39813a620e53de840a8bebc0aa40adff,
+        type: 3}
       propertyPath: movementSpeed
       value: 0
       objectReference: {fileID: 0}
@@ -2161,6 +2166,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d07b1927ccd4cd4c8d46fc0ccd4ff72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &1156733561 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7728609039993813517, guid: 39813a620e53de840a8bebc0aa40adff,
+    type: 3}
+  m_PrefabInstance: {fileID: 1156733559}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1302369811
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2285,13 +2296,13 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1156733560}
         m_TargetAssemblyTypeName: Car, Assembly-CSharp
-        m_MethodName: SetBaseSpeed
+        m_MethodName: SetCarSpeed
         m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 3
+          m_FloatArgument: 1
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -2559,13 +2570,13 @@ PrefabInstance:
     - target: {fileID: 8719294868309272941, guid: 59d37e111438c1e408f1ac2213681aa3,
         type: 3}
       propertyPath: playAnimation.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8719294868309272941, guid: 59d37e111438c1e408f1ac2213681aa3,
         type: 3}
       propertyPath: playAnimation.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 160138135}
+      objectReference: {fileID: 160138138}
     - target: {fileID: 8719294868309272941, guid: 59d37e111438c1e408f1ac2213681aa3,
         type: 3}
       propertyPath: playAnimation.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
@@ -2576,6 +2587,11 @@ PrefabInstance:
       propertyPath: toggleRadioEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1406797153}
+    - target: {fileID: 8719294868309272941, guid: 59d37e111438c1e408f1ac2213681aa3,
+        type: 3}
+      propertyPath: playAnimation.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetTrigger
+      objectReference: {fileID: 0}
     - target: {fileID: 8719294868309272941, guid: 59d37e111438c1e408f1ac2213681aa3,
         type: 3}
       propertyPath: toggleHeadlightEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -2590,6 +2606,21 @@ PrefabInstance:
         type: 3}
       propertyPath: toggleHeadlightEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ToggleHeadlights
+      objectReference: {fileID: 0}
+    - target: {fileID: 8719294868309272941, guid: 59d37e111438c1e408f1ac2213681aa3,
+        type: 3}
+      propertyPath: playAnimation.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: AnimController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8719294868309272941, guid: 59d37e111438c1e408f1ac2213681aa3,
+        type: 3}
+      propertyPath: playAnimation.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8719294868309272941, guid: 59d37e111438c1e408f1ac2213681aa3,
+        type: 3}
+      propertyPath: playAnimation.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59d37e111438c1e408f1ac2213681aa3, type: 3}
@@ -2899,6 +2930,73 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1501467083}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1575041893
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1575041896}
+  - component: {fileID: 1575041895}
+  - component: {fileID: 1575041894}
+  m_Layer: 0
+  m_Name: CarAnimator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1575041894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1575041893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d90d8b67d3b25ed4d9ed047ad333e19b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  acceleration: 1
+--- !u!95 &1575041895
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1575041893}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 715bc474fa1e2b649922e5dbacb2e9b0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!4 &1575041896
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1575041893}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1156733561}
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1583339724
 GameObject:
   m_ObjectHideFlags: 0
@@ -3484,7 +3582,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2063233657
 MonoBehaviour:

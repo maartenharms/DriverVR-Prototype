@@ -5,7 +5,7 @@ using UnityEngine;
 public class AnimController : MonoBehaviour
 {
     private Animator animator;
-    public float acceleration;
+    public float acceleration = 1;
 
     // Start is called before the first frame update
     void Awake()
@@ -48,6 +48,11 @@ public class AnimController : MonoBehaviour
     public void SetFloatValue(string key, float arg)
     {
         animator.SetFloat(key, arg);
+    }
+
+    public void SetTrigger(bool value)
+    {
+        animator.SetBool("isTriggered", value);
     }
 
     public void LerpAnimationSpeed(float targetSpeed)

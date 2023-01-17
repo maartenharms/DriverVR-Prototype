@@ -17,18 +17,34 @@ public class Car : Actor
     public override void Awake()
     {
         base.Awake();
-        animator = GetComponent<AnimController>();
+        animator.SetAnimationSpeed(carSpeed);
     }
 
     // Update is called once per frame
     
     void Update()
     {
-        Vector3 newMovement = new Vector3(0,0,1);
-        Move(newMovement);
-        //animator.speed = carSpeed;
+        //Vector3 newMovement = new Vector3(0,0,1);
+        //Move(newMovement);
+    }
+
+    public void SlowdownCar()
+    {
+        GlobalEventManager.StartButtonEvent(GlobalEventManager.BUTTON.BREAK);
+
+        if(carSpeed == minAcceleration)
+            SetCarSpeed(maxAcceleration);
+        else if(carSpeed == maxAcceleration)
+            SetCarSpeed(minAcceleration);
     }
     
+    public void SetCarSpeed(float newSpeed) 
+    {
+        Debug.Log("Set Speed");
+        carSpeed = newSpeed;
+
+        animator.LerpAnimationSpeed(newSpeed);
+    }
 
     public override void Move(Vector3 direction)
     {
@@ -42,14 +58,5 @@ public class Car : Actor
             GlobalEventManager.StartButtonEvent(GlobalEventManager.BUTTON.BREAK);
           
         acceleration = Mathf.Clamp(accelerate, minAcceleration, maxAcceleration);
-    }
-
-    public void SetCarSpeed(float newSpeed) 
-    {
-        carSpeed = newSpeed;
-
-        animator.LerpAnimationSpeed(newSpeed);
-    }
-
-    
+    }    
 }
