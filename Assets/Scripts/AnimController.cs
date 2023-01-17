@@ -13,17 +13,16 @@ public class AnimController : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    /* Debug Update
     void Update()
     {
         Debug.Log(animator.speed);
-        if(Input.GetKeyDown(KeyCode.W))
-            LerpAnimationSpeed(1);
+        //if(Input.GetKeyDown(KeyCode.W))
+        //    LerpAnimationSpeed(1);
 
-        if(Input.GetKeyDown(KeyCode.S))
-            LerpAnimationSpeed(0.3f);
+        //if(Input.GetKeyDown(KeyCode.S))
+        //    LerpAnimationSpeed(0.3f);
     }
-    */
+    
 
     public void SetStateValue<T1, T2>(T1 key, T2 arg)
     {

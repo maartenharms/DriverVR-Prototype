@@ -17,11 +17,15 @@ public class Car : Actor
     public override void Awake()
     {
         base.Awake();
+    }
+
+    private void Start()
+    {
         animator.SetAnimationSpeed(carSpeed);
     }
 
     // Update is called once per frame
-    
+
     void Update()
     {
         //Vector3 newMovement = new Vector3(0,0,1);
