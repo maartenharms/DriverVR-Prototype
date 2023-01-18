@@ -67,7 +67,7 @@ public class ObstacleManager : MonoBehaviour
         LevelData leveldata = CreateLevelData(levelname);
 
         CalculateCurrency(levelname, leveldata.obstacleCompletion);
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("MainMenu");
         Debug.Log("wut?");
     }
 

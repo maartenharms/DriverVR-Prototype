@@ -24,7 +24,8 @@ public class SpottingHeadtrack : MonoBehaviour
             if(hit.transform.CompareTag("Obstacle"))
             {
             spotObject.transform.position = hit.point;
-            isSpotting = true;
+                if(Vector3.Distance(spotObject.transform.position, transform.position) > 2)
+                    isSpotting = true;
             }
         }
 
