@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7150294471615968579}
   - component: {fileID: 8539264434228642653}
   - component: {fileID: 8687886607518459326}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Spotter
   m_TagString: Spotter
   m_Icon: {fileID: 0}

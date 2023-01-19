@@ -15,7 +15,6 @@ public class AnimController : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(animator.speed);
         //if(Input.GetKeyDown(KeyCode.W))
         //    LerpAnimationSpeed(1);
 

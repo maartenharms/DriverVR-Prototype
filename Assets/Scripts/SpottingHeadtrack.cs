@@ -9,7 +9,7 @@ public class SpottingHeadtrack : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        spotObject = Instantiate(Resources.Load<GameObject>("Prefabs/Spotter"));
+        spotObject = Instantiate(Resources.Load<GameObject>("Prefabs/DebugSpotter"));
         spotObject.transform.position = this.transform.position;
         spotObject.SetActive(false);
     }
@@ -24,11 +24,12 @@ public class SpottingHeadtrack : MonoBehaviour
             if(hit.transform.CompareTag("Obstacle"))
             {
             spotObject.transform.position = hit.point;
-                if(Vector3.Distance(spotObject.transform.position, transform.position) > 2)
-                    isSpotting = true;
+            isSpotting = true;
+                    
             }
         }
 
+        Debug.Log(hit.transform.name);
         spotObject.SetActive(isSpotting);
     }
 }

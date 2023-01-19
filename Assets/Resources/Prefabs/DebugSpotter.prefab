@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3021674144881729407}
   - component: {fileID: 5426905181150941162}
   - component: {fileID: -7754714262700940997}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: DebugSpotter
   m_TagString: Spotter
   m_Icon: {fileID: 0}
