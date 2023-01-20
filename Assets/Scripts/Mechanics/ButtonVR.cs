@@ -5,6 +5,9 @@ using UnityEngine.Events;
 
 public class ButtonVR : MonoBehaviour
 {
+    [SerializeField] private Material pressMat;
+    [SerializeField] private Material unpressMat;
+
     [SerializeField] private GameObject button;
     [SerializeField] public UnityEvent onPress;
     [SerializeField] public UnityEvent onRelease;
@@ -22,6 +25,7 @@ public class ButtonVR : MonoBehaviour
         isPressed = false;
 
         buttonReleasePos = button.transform.localPosition;
+        button.GetComponent<Renderer>().material = unpressMat;
     }
 
     private void ButtonPress(Collider other)
@@ -31,6 +35,7 @@ public class ButtonVR : MonoBehaviour
             presser = other.gameObject;
             button.transform.localPosition = buttonPressedPos;
             audioSource.Play();
+            button.GetComponent<Renderer>().material = pressMat;
             onPress.Invoke();
             isPressed = true;
         }
@@ -40,13 +45,13 @@ public class ButtonVR : MonoBehaviour
     {
         if(other.CompareTag("VRHandLeft"))
         {
-            if(OVRInput.GetDown(OVRInput.Button.PrimaryHandTrigger, OVRInput.Controller.LTouch))
+            if(OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger, OVRInput.Controller.LTouch))
             ButtonPress(other);
         }
 
         if(other.CompareTag("VRHandRight"))
         {
-            if(OVRInput.GetDown(OVRInput.Button.PrimaryHandTrigger, OVRInput.Controller.RTouch))
+            if(OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger, OVRInput.Controller.RTouch))
             ButtonPress(other);
         }
     }
@@ -57,6 +62,7 @@ public class ButtonVR : MonoBehaviour
         {
             presser = null;
             button.transform.localPosition = buttonReleasePos;
+            button.GetComponent<Renderer>().material = unpressMat;
             onRelease.Invoke();
             isPressed = false;
         }

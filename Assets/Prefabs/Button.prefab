@@ -172,6 +172,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9d458ce21d987f408c4e29046e299ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pressMat: {fileID: 2100000, guid: f876334171a3ac841844e16f9e4f504c, type: 2}
+  unpressMat: {fileID: 2100000, guid: cb3ddad4a9affdc4cb98be2eee41f7a6, type: 2}
   button: {fileID: 1564941794483315038}
   onPress:
     m_PersistentCalls:
@@ -241,7 +243,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7b64290e8e922864a9f6effdf6eb12bd, type: 2}
+  - {fileID: 2100000, guid: cb3ddad4a9affdc4cb98be2eee41f7a6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
