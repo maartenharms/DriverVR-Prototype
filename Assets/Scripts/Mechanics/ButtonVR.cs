@@ -7,6 +7,7 @@ public class ButtonVR : MonoBehaviour
 {
     [SerializeField] private Material pressMat;
     [SerializeField] private Material unpressMat;
+    [SerializeField] private GameObject outlineObject;
 
     [SerializeField] private GameObject button;
     [SerializeField] public UnityEvent onPress;
@@ -26,6 +27,7 @@ public class ButtonVR : MonoBehaviour
 
         buttonReleasePos = button.transform.localPosition;
         button.GetComponent<Renderer>().material = unpressMat;
+        outlineObject.SetActive(false);
     }
 
     private void ButtonPress(Collider other)
@@ -45,20 +47,24 @@ public class ButtonVR : MonoBehaviour
     {
         if(other.CompareTag("VRHandLeft"))
         {
+            outlineObject.SetActive(true);
             if(OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger, OVRInput.Controller.LTouch))
-            ButtonPress(other);
+                ButtonPress(other);
         }
 
         if(other.CompareTag("VRHandRight"))
         {
-            if(OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger, OVRInput.Controller.RTouch))
-            ButtonPress(other);
+            outlineObject.SetActive(true);
+            if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger, OVRInput.Controller.RTouch))
+                ButtonPress(other);
         }
     }
 
     void OnTriggerExit(Collider other)
     {
-        if(other.gameObject == presser)
+        outlineObject.SetActive(false);
+
+        if (other.gameObject == presser)
         {
             presser = null;
             button.transform.localPosition = buttonReleasePos;
