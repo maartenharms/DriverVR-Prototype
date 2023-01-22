@@ -9,6 +9,7 @@ public class SpottableObject : Obstacle
 
     private bool isSpotted = false;
 
+    private bool hasOutline = false;
     [SerializeField] private GameObject outlineObject;
     private Material outlineMat;
 
@@ -16,8 +17,15 @@ public class SpottableObject : Obstacle
     {
         base.Awake();
         isActivated = true;
-        outlineMat = outlineObject.GetComponent<Renderer>().material;
-        outlineObject.SetActive(false);
+        if (outlineObject != null)
+            hasOutline = true;
+
+        if (hasOutline) 
+        {
+            outlineMat = outlineObject.GetComponent<Renderer>().material;
+            outlineObject.SetActive(false);
+        }
+        
     }
 
     private void Update()
@@ -36,6 +44,8 @@ public class SpottableObject : Obstacle
 
     private void ChangeOutlineColor(Color startColor, Color endColor, float progress) 
     {
+        if (!hasOutline)
+            return;
         Color newColor = Color.Lerp(startColor, endColor, progress);
         outlineMat.color = newColor;
     }
@@ -44,7 +54,9 @@ public class SpottableObject : Obstacle
     {
         if (other.tag == "Spotter")
         {
-            outlineObject.SetActive(true);
+            if(hasOutline)
+                outlineObject.SetActive(true);
+
             isSpotted = true;
             currentSpotTime += 1 * Time.deltaTime;
             ChangeOutlineColor(Color.red, Color.green, (currentSpotTime/spotTime));
@@ -57,7 +69,9 @@ public class SpottableObject : Obstacle
     {
         if (other.tag == "Spotter") 
         {
-            outlineObject.SetActive(false);
+            if(hasOutline)
+                outlineObject.SetActive(false);
+
             isSpotted = false;
         }
     }

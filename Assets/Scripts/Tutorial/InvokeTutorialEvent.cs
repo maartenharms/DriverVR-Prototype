@@ -7,9 +7,18 @@ public class InvokeTutorialEvent : TutorialEvent
 {
     public UnityEvent tutorialEvent;
 
+    private void Update()
+    {
+        if (onCompleteEvent == null)
+            return;
+
+        if (!audioSource.isPlaying)
+            OnCompleteEvent();
+    }
+
     public override void InitiateEvent()
     {
-        tutorialEvent.Invoke();
+        tutorialEvent?.Invoke();
         OnCompleteEvent();
     }
 }
