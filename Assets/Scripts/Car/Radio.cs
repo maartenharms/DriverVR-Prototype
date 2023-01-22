@@ -9,10 +9,14 @@ public class Radio : Actor
     private AudioSource audioSource;
     public UnityAction onEventTrigger;
 
+    public bool isPlayingOnStart = false;
+
     // Start is called before the first frame update
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        if (isPlayingOnStart)
+            audioSource.Play();
     }
 
     public void ToggleRadio()

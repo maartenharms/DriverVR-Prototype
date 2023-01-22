@@ -124,7 +124,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7535288613772787594}
   - component: {fileID: 4756740625463666901}
-  - component: {fileID: 854594439}
   m_Layer: 0
   m_Name: Start
   m_TagString: Untagged
@@ -163,25 +162,6 @@ MonoBehaviour:
   audioSource: {fileID: 0}
   tutorialText: Welcome to your first driving lesson!
   voiceOver: {fileID: 8300000, guid: dbdac683d1ab3694187e586456e66984, type: 3}
-  tutorialEvent:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &854594439
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7535288613772787593}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c1832056352d8c429dd8d0596514313, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textObj: {fileID: 0}
-  audioSource: {fileID: 0}
-  tutorialText: 
-  voiceOver: {fileID: 0}
   tutorialEvent:
     m_PersistentCalls:
       m_Calls: []

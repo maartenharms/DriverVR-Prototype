@@ -30,8 +30,12 @@ public class SpottableObject : Obstacle
 
     private void Update()
     {
-        if (isCompleted)
+        if (isCompleted) 
+        {
+            outlineObject.SetActive(false);
             return;
+        }
+            
 
         if (!isSpotted && currentSpotTime > 0) 
         {
@@ -47,7 +51,7 @@ public class SpottableObject : Obstacle
         if (!hasOutline)
             return;
         Color newColor = Color.Lerp(startColor, endColor, progress);
-        outlineMat.color = newColor;
+        //outlineMat.color = newColor;
     }
 
     private void OnTriggerStay(Collider other)

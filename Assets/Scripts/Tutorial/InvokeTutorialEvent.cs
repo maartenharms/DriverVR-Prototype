@@ -18,7 +18,7 @@ public class InvokeTutorialEvent : TutorialEvent
 
     public override void InitiateEvent()
     {
+        base.InitiateEvent();
         tutorialEvent?.Invoke();
-        OnCompleteEvent();
     }
 }
