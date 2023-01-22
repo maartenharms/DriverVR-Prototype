@@ -7,7 +7,7 @@ namespace GlobalEvents
 {
     public class GlobalEventManager
     {
-        public enum BUTTON {ANY, RADIO, HEADLIGHT, BREAK};
+        public enum BUTTON {ANY, RADIO, HEADLIGHT, BRAKE};
 
         public static UnityAction<BUTTON> onButtonEvent;
 

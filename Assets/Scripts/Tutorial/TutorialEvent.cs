@@ -3,48 +3,38 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using GlobalEvents;
+using TMPro;
 
 public class TutorialEvent : MonoBehaviour
 {
-    private GameObject[] tutorialObjects;
     public UnityAction onCompleteEvent;
+    public TextMeshPro textObj;
+    public AudioSource audioSource;
+
+    public string tutorialText;
+    public AudioClip voiceOver;
 
     public void Awake()
     {
-        // Find all childed gameobjects
-        // and save the refferences in an array
-        tutorialObjects = new GameObject[transform.childCount];
-        for(int i = 0; i < transform.childCount; i++)
-        {
-            tutorialObjects[i] = transform.GetChild(i).gameObject;
-        }
-
-        // Disable child objects
-        ToggleTutorialObjects(false);
+        GameObject tutorialBox = GameObject.FindGameObjectWithTag("TutorialBox");
+        textObj = tutorialBox.GetComponent<TextMeshPro>();
+        audioSource = tutorialBox.GetComponent<AudioSource>();
     }
 
     // Start tutorial event
     public virtual void InitiateEvent()
     {
-        // Enable child objects
-        ToggleTutorialObjects(true);
+        textObj.text = tutorialText;
+        audioSource.clip = voiceOver;
+        audioSource.Play();
     }
 
     // Finish tutorial event
     public virtual void OnCompleteEvent()
     {
-        ToggleTutorialObjects(false);
+        audioSource.Stop();
         onCompleteEvent?.Invoke();
         onCompleteEvent = null;
         Debug.Log("event cleared");
-    }
-
-    // Enable or disable all childed gameobjects
-    public void ToggleTutorialObjects(bool isActive)
-    {
-        foreach(GameObject obj in tutorialObjects)
-        {
-            obj.SetActive(isActive);
-        }
     }
 }

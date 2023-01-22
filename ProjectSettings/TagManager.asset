@@ -11,6 +11,7 @@ TagManager:
   - Obstacle
   - LevelGoal
   - Spotter
+  - TutorialBox
   layers:
   - Default
   - TransparentFX

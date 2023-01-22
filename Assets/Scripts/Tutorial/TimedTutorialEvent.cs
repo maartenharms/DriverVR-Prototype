@@ -29,11 +29,4 @@ public class TimedTutorialEvent : TutorialEvent
             }
         }
     }
-
-    public override void OnCompleteEvent()
-    {
-        ToggleTutorialObjects(false);
-        onCompleteEvent?.Invoke();
-        onCompleteEvent = null;
-    }
 }

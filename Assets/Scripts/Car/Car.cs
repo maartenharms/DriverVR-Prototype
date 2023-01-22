@@ -34,7 +34,7 @@ public class Car : Actor
 
     public void SlowdownCar()
     {
-        GlobalEventManager.StartButtonEvent(GlobalEventManager.BUTTON.BREAK);
+        GlobalEventManager.StartButtonEvent(GlobalEventManager.BUTTON.BRAKE);
 
         if(carSpeed == minAcceleration)
             SetCarSpeed(maxAcceleration);
@@ -59,7 +59,7 @@ public class Car : Actor
     public void Accelerate(float accelerate) 
     {
         if(accelerate < 1)
-            GlobalEventManager.StartButtonEvent(GlobalEventManager.BUTTON.BREAK);
+            GlobalEventManager.StartButtonEvent(GlobalEventManager.BUTTON.BRAKE);
           
         acceleration = Mathf.Clamp(accelerate, minAcceleration, maxAcceleration);
     }    
