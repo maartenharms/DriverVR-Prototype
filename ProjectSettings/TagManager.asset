@@ -12,6 +12,7 @@ TagManager:
   - LevelGoal
   - Spotter
   - TutorialBox
+  - Mirror
   layers:
   - Default
   - TransparentFX
