@@ -555,6 +555,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 2.039
       objectReference: {fileID: 0}
+    - target: {fileID: 8450746308375404497, guid: 39813a620e53de840a8bebc0aa40adff,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 8494630530316793357, guid: 39813a620e53de840a8bebc0aa40adff,
         type: 3}
       propertyPath: m_VolumeFrameworkUpdateModeOption
