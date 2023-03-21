@@ -29,18 +29,23 @@ public class SteeringWheelControll : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("PlayerHand"))
+        if (other.CompareTag("VRHandLeft"))
         {
-            if (rightHandOnWheel == false && OVRInput.GetDown (OVRInput.Button.PrimaryHandTrigger, OVRInput.Controller.RTouch))
-            {
-                PlaceHandOnWheel(ref rightHand, ref rightHandOriginalParent, ref rightHandOnWheel);
-            }
+
 
             if (leftHandOnWheel == false && OVRInput.GetDown(OVRInput.Button.PrimaryHandTrigger, OVRInput.Controller.LTouch))
             {
                 PlaceHandOnWheel(ref leftHand, ref leftHandOriginalParent, ref leftHandOnWheel);
             }
         }    
+
+        if (other.CompareTag("VRHandRight"))
+        {
+            if (rightHandOnWheel == false && OVRInput.GetDown (OVRInput.Button.PrimaryHandTrigger, OVRInput.Controller.RTouch))
+            {
+                PlaceHandOnWheel(ref rightHand, ref rightHandOriginalParent, ref rightHandOnWheel);
+            }
+        }
     }
 
     private void ReleaseHandsFromWheel()
