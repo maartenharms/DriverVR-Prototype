@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e4ca551e86f66c4aa6a062e6ebafdb0, type: 3}
   m_Name: Audio Manager
   m_EditorClassIdentifier: 
-  SFX: {fileID: 24300002, guid: 91906e921461046459e275cc99d535ed, type: 2}
+  SFX: {fileID: 24300002, guid: 05efff994822ef8458089597cf5564fb, type: 2}
   Sounds:
   - Name: Ping
     Clip: {fileID: 8300000, guid: 02a6b277f70459242b0a5e8b4e5346b6, type: 3}
