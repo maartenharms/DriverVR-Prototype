@@ -7,27 +7,27 @@ using UnityEngine.Audio;
 public class VolumeSettings : MonoBehaviour
 {
     [SerializeField] private AudioMixer myMixer;
-    [SerializeField] private Slider musicSlider;
+    [SerializeField] private Slider voiceSlider;
     [SerializeField] private Slider SFXSlider;
 
 
     public void Start()
     {
-        if (PlayerPrefs.HasKey("musicVolume"))
+        if (PlayerPrefs.HasKey("voiceVolume"))
         {
             LoadVolume();
         }
         else
         {
-            SetMusicVolume();
+            SetVoiceVolume();
             SetSFXVolume();
         }
     }
-    public void SetMusicVolume()
+    public void SetVoiceVolume()
     {
-        float volume = musicSlider.value;
-        myMixer.SetFloat("music", Mathf.Log10(volume)*20);
-        PlayerPrefs.SetFloat("musicVolume", volume);
+        float volume = voiceSlider.value;
+        myMixer.SetFloat("VoiceOver", Mathf.Log10(volume)*20);
+        PlayerPrefs.SetFloat("voiceVolume", volume);
     }
 
     public void SetSFXVolume()
@@ -39,10 +39,10 @@ public class VolumeSettings : MonoBehaviour
 
     private void LoadVolume()
     {
-        musicSlider.value = PlayerPrefs.GetFloat("musicVolume");
+        voiceSlider.value = PlayerPrefs.GetFloat("voiceVolume");
         SFXSlider.value = PlayerPrefs.GetFloat("SFXVolume");
 
 
-        SetMusicVolume();
+        SetVoiceVolume();
     }
 }

@@ -1942,6 +1942,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 456578948}
+  - component: {fileID: 456578949}
   m_Layer: 0
   m_Name: SettingsMenu
   m_TagString: Untagged
@@ -1968,6 +1969,21 @@ Transform:
   m_Father: {fileID: 1190847929}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &456578949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 456578947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eee665eb2dda0c14eb0b1a3644899f7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myMixer: {fileID: 24100000, guid: 05efff994822ef8458089597cf5564fb, type: 2}
+  voiceSlider: {fileID: 529273210}
+  SFXSlider: {fileID: 742536351}
 --- !u!1 &474370407
 GameObject:
   m_ObjectHideFlags: 0
@@ -2485,7 +2501,7 @@ GameObject:
   - component: {fileID: 529273209}
   - component: {fileID: 529273210}
   m_Layer: 0
-  m_Name: MusicSlider
+  m_Name: VoiceSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5299,7 +5315,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myMixer: {fileID: 24100000, guid: 05efff994822ef8458089597cf5564fb, type: 2}
-  musicSlider: {fileID: 529273210}
+  voiceSlider: {fileID: 0}
   SFXSlider: {fileID: 742536351}
 --- !u!1 &1208240179
 GameObject:
@@ -8190,7 +8206,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -112.8, y: -2.1}
+  m_AnchoredPosition: {x: -149.2, y: -2.1}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2002327956
@@ -8213,7 +8229,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Music:'
+  m_text: 'Voice Over:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
