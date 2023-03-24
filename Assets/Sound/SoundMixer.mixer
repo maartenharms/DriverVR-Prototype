@@ -48,7 +48,11 @@ AudioMixerController:
   m_SuspendThreshold: -80
   m_EnableSuspend: 1
   m_UpdateMode: 0
-  m_ExposedParameters: []
+  m_ExposedParameters:
+  - guid: 2ee6ae22152043743ac6a4c08c13cbac
+    name: SFX
+  - guid: 391f9ad39aa5c40479a3e8bd905277d4
+    name: VoiceOver
   m_AudioMixerGroupViews:
   - guids:
     - 1c87ec80708983d48b0e86901d8dee0b
@@ -103,7 +107,7 @@ AudioMixerSnapshotController:
   m_SnapshotID: 703953dc96ea6b541bf9100c99b395ab
   m_FloatValues:
     2ee6ae22152043743ac6a4c08c13cbac: -0.002441872
-    391f9ad39aa5c40479a3e8bd905277d4: -0.037667945
+    391f9ad39aa5c40479a3e8bd905277d4: 0
     1ea0491fe7f250e4cb45eb23f305c293: -0.002441872
   m_TransitionOverrides: {}
 --- !u!244 &1535594225897208938

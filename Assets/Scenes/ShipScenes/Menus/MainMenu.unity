@@ -2575,16 +2575,16 @@ MonoBehaviour:
   m_FillRect: {fileID: 1514815198}
   m_HandleRect: {fileID: 1101132034}
   m_Direction: 0
-  m_MinValue: 0.001
+  m_MinValue: 0.0001
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.71
+  m_Value: 0.001
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1190847931}
         m_TargetAssemblyTypeName: VolumeSettings, Assembly-CSharp
-        m_MethodName: SetMusicVolume
+        m_MethodName: SetVoiceVolume
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3447,10 +3447,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 815304190}
   m_HandleRect: {fileID: 1847536892}
   m_Direction: 0
-  m_MinValue: 0.001
+  m_MinValue: 0.0001
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.71
+  m_Value: 0.001
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -5315,7 +5315,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myMixer: {fileID: 24100000, guid: 05efff994822ef8458089597cf5564fb, type: 2}
-  voiceSlider: {fileID: 0}
+  voiceSlider: {fileID: 529273210}
   SFXSlider: {fileID: 742536351}
 --- !u!1 &1208240179
 GameObject:
